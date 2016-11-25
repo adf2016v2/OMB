@@ -1,7 +1,6 @@
 ﻿using System;
 using Entidades;
 using GalaSoft.MvvmLight;
-using OMB_Desktop.Common;
 using Prism.Interactivity.InteractionRequest;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -77,7 +76,7 @@ namespace OMB_Desktop.ViewModel
 
       Logout = new RelayCommand(() =>
       {
-        SecurityServices serv = new SecurityServices(null);
+        SecurityServices serv = new SecurityServices();
 
         serv.Logout();
         Usuario = null;

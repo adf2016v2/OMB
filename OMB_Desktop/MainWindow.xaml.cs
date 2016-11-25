@@ -24,11 +24,12 @@ namespace OMB_Desktop
     public MainWindow()
     {
       InitializeComponent();
-    }
+      this.DataContext = new MainWindowViewModel();
+        }
 
-    private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
-    {
+   //     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+    //{
       //this.DataContext = new MainWindowViewModel();
-    }
+  //  }
   }
 }
