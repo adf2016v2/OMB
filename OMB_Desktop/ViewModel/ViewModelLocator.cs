@@ -13,9 +13,9 @@
 */
 
 using GalaSoft.MvvmLight;
+//es Ioc es una clase generadora de objetos
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using OMB_Desktop.ViewModels;
 
 namespace OMB_Desktop.ViewModel
 {
@@ -44,6 +44,8 @@ namespace OMB_Desktop.ViewModel
       ////    SimpleIoc.Default.Register<IDataService, DataService>();
       ////}
 
+//generador de objetos que necesita la instancia
+
       SimpleIoc.Default.Register<MainWindowViewModel>();
       SimpleIoc.Default.Register<LoginViewModel>();
     }
@@ -53,12 +55,12 @@ namespace OMB_Desktop.ViewModel
       get { return ServiceLocator.Current.GetInstance<MainWindowViewModel>(); }
     }
 
-    public LoginViewModel Login
-    {
-      get { return ServiceLocator.Current.GetInstance<LoginViewModel>(); }
-    }
-        
-    public static void Cleanup()
+        public LoginViewModel Login
+        {
+            get { return ServiceLocator.Current.GetInstance<LoginViewModel>(); }
+        }
+
+        public static void Cleanup()
     {
       // TODO Clear the ViewModels
     }

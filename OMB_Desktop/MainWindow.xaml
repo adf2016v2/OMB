@@ -5,14 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:views= "clr-namespace:OMB_Desktop.Views"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Loaded="MainWindow_OnLoaded"
         Title="Administracion de OMB" 
         WindowStartupLocation="CenterScreen"
         Height="700" Width="1100"
-        >
-
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding DisplayLogin}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                
+                
+                <prism:PopupWindowAction.WindowContent>
+                    <views:LoginView></views:LoginView>
+               
+                
+                </prism:PopupWindowAction.WindowContent>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
   <Window.Resources>
     <system:String x:Key="StatusNoConectado">Usuario no Conectado</system:String>
     <system:String x:Key="StatusNoConectadoFall">Usuario no Conectado*</system:String>

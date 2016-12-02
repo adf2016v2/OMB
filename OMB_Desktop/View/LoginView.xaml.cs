@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using OMB_Desktop.ViewModels;
 
 namespace OMB_Desktop.Views
 {
@@ -29,5 +28,10 @@ namespace OMB_Desktop.Views
       //  Este uso de codebehind es inevitable
       txtUsuario.Focus();
     }
-  }
+
+        private void txtUsuario_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+    }
 }
